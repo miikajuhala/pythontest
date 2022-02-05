@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "02_pytest_tests (2p)",
+      "setup": "pip3 install pytest pytest-mock; if [ -f requirements.txt ]; then pip3 install -r requirements.txt; fi",
+      "run": "python3 -m pytest",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 2
+    },
+    {
+      "name": "03_smart_post (1p)",
+      "setup": "",
+      "run": "python3 postinumerot.py",
+      "input": "smart post",
+      "output": ".*00104.*40934.*99994.*",
+      "comparison": "regex",
+      "timeout": 1,
+      "points": 1
+    },
+    {
+      "name": "01_Postinumerot_can_be_imported (1p)",
+      "setup": "",
+      "run": "echo \"import postinumerot; print('Import was successful!')\" | python3",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 1
+    },
+    {
+      "name": "04_helsinki_still_works (1p)",
+      "setup": "",
+      "run": "python3 postinumerot.py",
+      "input": "HELSINKI",
+      "output": "00730",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 1
+    }
+  ]
+}
