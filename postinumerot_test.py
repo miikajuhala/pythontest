@@ -5,7 +5,7 @@ from postinumerot import get_one
 
 
 def test_get_numbers_multiple():
-     monta = get_numbers()
+     monta = get_numbers("ESPOO")
 
      assert len(monta) >= 2 
 

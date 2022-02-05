@@ -7,26 +7,32 @@
 import math
 import requests
 import json
+from typing import Optional
 
 
-def get_numbers():
+data1=[]
+def get_numbers(postitoimipaikka: str)-> Optional[str]:
     response_API = requests.get('https://raw.githubusercontent.com/theikkila/postinumerot/master/postcode_map_light.json')
     #print(response_API.status_code)
     data = response_API.text
     realdata = json.loads(data)
-    data1=[]
+   
 
-    postitoimipaikka = "HELSINKI";
+    for postinumero, kaupunki in realdata.items():
+                if postitoimipaikka==kaupunki:
+                    data1.append(postinumero)
+    return data1
 
-    if postitoimipaikka not in realdata.values(): 
-        print("Tuntematon postitoimipaikka")
-    else:
-        for postinumero, kaupunki in realdata.items():
-            if postitoimipaikka==kaupunki:
-                data1.append(postinumero)
-
-    data1.sort()   
-    return print("Postinumerot: "), print(*data1, sep=", ")
+if __name__ == "__main__":
+        etsi = input("Kirjoita postitoimipaikka: ").upper();
+        name = get_numbers(etsi)
+        if data1: 
+            data1.sort()   
+            print("Postinumerot: "), print(*data1, sep=", ")
+        else:
+            print("Tuntematon postitoimipaikka")
+            
+           
     
          
 def get_one(postitoimipaikka):
