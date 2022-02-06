@@ -12,6 +12,8 @@ from typing import Optional
 
 data1=[]
 def get_numbers(postitoimipaikka: str)-> Optional[str]:
+    postitoimipaikka.replace(" ", "")
+    print(postitoimipaikka)
     response_API = requests.get('https://raw.githubusercontent.com/theikkila/postinumerot/master/postcode_map_light.json')
     #print(response_API.status_code)
     data = response_API.text
@@ -24,7 +26,8 @@ def get_numbers(postitoimipaikka: str)-> Optional[str]:
     return data1
 
 if __name__ == "__main__":
-        etsi = input("Kirjoita postitoimipaikka: ").upper();
+        etsi = input("Kirjoita postitoimipaikka: ").upper().replace(" ", "")
+        print(etsi)
         name = get_numbers(etsi)
         if data1: 
             data1.sort()   

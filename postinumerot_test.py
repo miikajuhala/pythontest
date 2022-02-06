@@ -18,3 +18,8 @@ def test_get_false_place():
     false = get_one("koirakissa")
 
     assert false=="Tuntematon postitoimipaikka"
+
+def test_get_smartpost():
+    erikseen = get_numbers("smart post")
+    yhteen = get_numbers("smartpost")
+    assert erikseen==yhteen
