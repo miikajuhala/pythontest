@@ -31,7 +31,7 @@ if __name__ == "__main__":
         name = get_numbers(etsi)
         if data1: 
             data1.sort()   
-            print("Postinumerot: "), print(*data1, sep=", ")
+            print(*data1, sep=", ")
         else:
             print("Tuntematon postitoimipaikka")
             
