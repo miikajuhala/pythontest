@@ -13,9 +13,9 @@ from typing import Optional
 data1=[]
 def get_numbers(postitoimipaikka: str)-> Optional[str]:
     
-    response_API = requests.get('https://raw.githubusercontent.com/theikkila/postinumerot/master/postcode_map_light.json')
+    response_api = requests.get('https://raw.githubusercontent.com/theikkila/postinumerot/master/postcode_map_light.json')
     #print(response_API.status_code)
-    data = response_API.text
+    data = response_api.text
     realdata = json.loads(data)
    
 
