@@ -37,8 +37,8 @@ if __name__ == "__main__":
     
          
 def get_one(postitoimipaikka):
-    response_API = requests.get('https://raw.githubusercontent.com/theikkila/postinumerot/master/postcode_map_light.json')
-    data = response_API.text
+    response_api = requests.get('https://raw.githubusercontent.com/theikkila/postinumerot/master/postcode_map_light.json')
+    data = response_api.text
     realdata = json.loads(data)
     data1=[]
     
