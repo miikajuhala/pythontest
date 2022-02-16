@@ -1,5 +1,4 @@
 # Kirjoita postinumerot-moduulin testit tähän tiedostoon
-from postinumerot import get_numbers
 from postinumerot import get_one
 
 
